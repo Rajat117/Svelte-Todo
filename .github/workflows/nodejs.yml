@@ -3,7 +3,7 @@ name: Node CI
 on: [push]
 
 jobs:
-  build:
+  build and deploy:
 
     runs-on: ubuntu-latest
 
@@ -17,8 +17,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Jekyll Action
-      uses: helaili/jekyll-action@1.0
     - name: npm install, build, and test
       run: |
         npm ci
